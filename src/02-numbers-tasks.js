@@ -7,7 +7,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns an area of a rectangle given by width and heigth.
  *
@@ -22,7 +21,6 @@
 function getRectangleArea(width, height) {
   return width * height;
 }
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -57,7 +55,6 @@ function getAverage(value1, value2) {
   const avr = num1 + num2;
   return avr;
 }
-
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
@@ -214,7 +211,7 @@ function isPrime(n) {
     return true;
   }
   const sqrt = Math.sqrt(n);
-  for (let i = 2; i <= sqrt; i++) {
+  for (let i = 2; i <= sqrt; i += i) {
     if (n % i === 0) {
       return false;
     }

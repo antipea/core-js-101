@@ -7,7 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-
 /**
  * Returns an index of the specified element in array or -1 if element is not found
  *
@@ -20,6 +19,7 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function findElement(arr, value) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === value) return i;
@@ -38,6 +38,7 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function generateOdds(len) {
   const arr = [];
   for (let i = 0; i < len * 2; i++) {
@@ -58,6 +59,7 @@ function generateOdds(len) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function doubleArray(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -68,7 +70,6 @@ function doubleArray(arr) {
   }
   return arrNew;
 }
-
 
 /**
  * Returns an array of positive numbers from the specified array in original order
@@ -81,6 +82,7 @@ function doubleArray(arr) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getArrayOfPositives(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -102,6 +104,7 @@ function getArrayOfPositives(arr) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getArrayOfStrings(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -123,6 +126,7 @@ function getArrayOfStrings(arr) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function removeFalsyValues(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -143,6 +147,7 @@ function removeFalsyValues(arr) {
  *    => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ],
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getUpperCaseStrings(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -161,6 +166,7 @@ function getUpperCaseStrings(arr) {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getStringsLength(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -180,6 +186,7 @@ function getStringsLength(arr) {
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function insertItem(arr, item, index) {
   for (let i = 0; i <= arr.length; i++) {
     if (i === index) {
@@ -199,6 +206,7 @@ function insertItem(arr, item, index) {
  *    [ 1, 3, 4, 5 ], 2 => [ 1, 3 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getHead(arr, n) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -219,6 +227,7 @@ function getHead(arr, n) {
  *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getTail(arr, n) {
   const arrNew = [];
   arr.reverse();
@@ -230,7 +239,6 @@ function getTail(arr, n) {
   arrNew.reverse();
   return arrNew;
 }
-
 
 /**
  * Returns CSV represebtation of two-dimentional numeric array.
@@ -267,6 +275,7 @@ function toCsvText(/* arr */) {
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function toArrayOfSquares(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -274,7 +283,6 @@ function toArrayOfSquares(arr) {
   }
   return arrNew;
 }
-
 
 /**
  * Transforms the numeric array to the according moving sum array:
@@ -305,6 +313,7 @@ function getMovingSum(/* arr */) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getSecondItems(arr) {
   const arrNew = [];
   for (let i = 0; i < arr.length; i++) {
@@ -329,6 +338,7 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function propagateItemsByPositionIndex(arr) {
   const arrNew = [];
   let count = 1;
@@ -336,7 +346,7 @@ function propagateItemsByPositionIndex(arr) {
     for (let j = 0; j < count; j++) {
       arrNew.push(arr[i]);
     }
-    count++;
+    count += 1;
   }
   return arrNew;
 }
@@ -354,6 +364,7 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function get3TopItems(arr) {
   if (arr.length === 0) return arr;
   const arrNew = [];
@@ -378,13 +389,14 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getPositivesCount(arr) {
   if (arr.length === 0) return 0;
   let num = 0;
   for (let i = 0; i < arr.length; i++) {
     if (typeof arr[i] === 'number') {
       if (Math.sign(arr[i]) === 1) {
-        num++;
+        num += 1;
       }
     }
   }
@@ -421,6 +433,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getItemsSum(arr) {
   if (arr.length === 0) return 0;
   let num = 0;
@@ -442,12 +455,13 @@ function getItemsSum(arr) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getFalsyValuesCount(arr) {
   if (arr.length === 0) return 0;
   let num = 0;
   for (let i = 0; i < arr.length; i++) {
     const x = Boolean(arr[i]);
-    if (x === false) num++;
+    if (x === false) num += 1;
   }
   return num;
 }
@@ -466,11 +480,12 @@ function getFalsyValuesCount(arr) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function findAllOccurences(arr, item) {
   let num = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === item) {
-      num++;
+      num += 1;
     }
   }
   return num;
@@ -487,6 +502,7 @@ function findAllOccurences(arr, item) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function toStringList(arr) {
   let str = '';
   for (let i = 0; i < arr.length; i++) {
@@ -494,7 +510,6 @@ function toStringList(arr) {
   }
   return str.slice(0, -1);
 }
-
 
 /**
  * Sorts the specified array by country name first and city name
@@ -578,6 +593,7 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getIntervalArray(start, end) {
   const arr = [];
   for (let i = start; i <= end; i++) {
@@ -633,9 +649,10 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function group(array, keySelector, valueSelector) {
   const obj = new Map();
-  for (let key, i = 0; i < array.length; ++i) {
+  for (let key, i = 0; i < array.length; i++) {
     key = keySelector(array[i]);
     if (obj.has(key)) {
       obj.get(key).push(valueSelector(array[i]));
@@ -664,7 +681,6 @@ function selectMany(arr, childrenSelector) {
   return arr.reduce((acc, val) => acc.concat(childrenSelector(val)), result);
 }
 
-
 /**
  * Returns an element from the multidimentional array by the specified indexes.
  *
@@ -680,7 +696,6 @@ function selectMany(arr, childrenSelector) {
 function getElementByIndexes(/* arr, indexes */) {
   throw new Error('Not implemented');
 }
-
 
 /**
  * Swaps the head and tail of the specified array:
@@ -703,7 +718,6 @@ function getElementByIndexes(/* arr, indexes */) {
 function swapHeadAndTail(/* arr */) {
   throw new Error('Not implemented');
 }
-
 
 module.exports = {
   findElement,

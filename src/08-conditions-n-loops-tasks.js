@@ -6,7 +6,6 @@
  *                                                                                                *
  ************************************************************************************************ */
 
-
 /**
  * Returns the 'Fizz','Buzz' or an original number using the following rules:
  * 1) return original number
@@ -62,7 +61,6 @@ function getFactorial(n) {
   return n * getFactorial(n - 1);
 }
 
-
 /**
  * Returns the sum of integer numbers between n1 and n2 (inclusive).
  *
@@ -75,6 +73,7 @@ function getFactorial(n) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function getSumBetweenNumbers(n1, n2) {
   let num = 0;
   for (let i = n1; i <= n2; i++) {
@@ -82,7 +81,6 @@ function getSumBetweenNumbers(n1, n2) {
   }
   return num;
 }
-
 
 /**
  * Returns true, if a triangle can be built with the specified sides a, b, c
@@ -102,7 +100,6 @@ function getSumBetweenNumbers(n1, n2) {
 function isTriangle(a, b, c) {
   return (a + b > c) && (a + c > b) && (b + c > a);
 }
-
 
 /**
  * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
@@ -140,7 +137,6 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Returns true, if point lies inside the circle, otherwise false.
  * Circle is an object of
@@ -168,9 +164,8 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *
  */
 function isInsideCircle(circle, point) {
-  return true ? (circle.center.x === point.x && circle.center.y === point.y) : false;
+  return (circle.center.x === point.x && circle.center.y === point.y);
 }
-
 
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
@@ -186,7 +181,6 @@ function isInsideCircle(circle, point) {
 function findFirstSingleChar(/* str */) {
   throw new Error('Not implemented');
 }
-
 
 /**
  * Returns the string representation of math interval,
@@ -214,7 +208,6 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Reverse the specified string (put all chars in reverse order)
  *
@@ -230,7 +223,6 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
 function reverseString(str) {
   return str.split('').reverse().join('');
 }
-
 
 /**
  * Reverse the specified integer number (put all digits in reverse order)
@@ -269,10 +261,11 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function isCreditCardNumber(ccn) {
   let sum = 0;
   for (let i = 0; i < ccn.length; i++) {
-    let cardNum = parseInt(ccn[i]);
+    let cardNum = parseInt(ccn[i], 10);
     if (((ccn.length - i) % 2) === 0) {
       cardNum *= 2;
       if (cardNum > 9) {
@@ -340,6 +333,7 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function isBracketsBalanced(str) {
   if (str.length % 2 === 1) {
     return false;
@@ -367,10 +361,8 @@ function isBracketsBalanced(str) {
       }
     }
   }
-
   return arr.length === 0;
 }
-
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n <= 10)
@@ -392,10 +384,10 @@ function isBracketsBalanced(str) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
+/* eslint radix: "error" */
 function toNaryString(num, n) {
-  return parseInt(String(num)).toString(n);
+  return parseInt(String(num), 10).toString(n);
 }
-
 
 /**
  * Returns the commom directory path for specified array of full filenames.
@@ -435,7 +427,6 @@ function getMatrixProduct(/* m1, m2 */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Returns the evaluation of the specified tic-tac-toe position.
  * See the details: https://en.wikipedia.org/wiki/Tic-tac-toe
@@ -469,7 +460,6 @@ function getMatrixProduct(/* m1, m2 */) {
 function evaluateTicTacToePosition(/* position */) {
   throw new Error('Not implemented');
 }
-
 
 module.exports = {
   getFizzBuzz,

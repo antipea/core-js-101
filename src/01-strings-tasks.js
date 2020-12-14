@@ -5,7 +5,6 @@
  *                                                                                           *
  ******************************************************************************************* */
 
-
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -21,7 +20,6 @@
 function concatenateStrings(value1, value2) {
   return value1 + value2;
 }
-
 
 /**
  * Returns the length of given string.
@@ -69,7 +67,6 @@ function extractNameFromTemplate(value) {
   return value.slice(7, -1);
 }
 
-
 /**
  * Returns a first char of the given string.
  *
@@ -110,6 +107,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function repeatString(value, count) {
   let str = '';
   for (let i = 0; i < count; i++) {
@@ -148,7 +146,6 @@ function removeFirstOccurrences(str, value) {
 function unbracketTag(str) {
   return str.replace(/</, '').replace(/>/, '');
 }
-
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -210,7 +207,6 @@ function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -248,7 +244,6 @@ function isString(value) {
   return typeof value === 'string' || value instanceof String;
 }
 
-
 /**
  * Returns playid card id.
  *
@@ -276,7 +271,6 @@ function isString(value) {
 function getCardId(/* value */) {
   throw new Error('Not implemented');
 }
-
 
 module.exports = {
   concatenateStrings,
