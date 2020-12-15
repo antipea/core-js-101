@@ -26,18 +26,19 @@
  *  21 => 'Fizz'
  *
  */
+/* eslint no-return-assign: "error" */
+/* eslint no-param-reassign: ["error", { "props": true,
+"ignorePropertyModificationsFor": ["num"] }] */
 function getFizzBuzz(num) {
   let str = '';
   if (num % 3 === 0 && num % 5 === 0) {
     str = 'FizzBuzz';
-  }
-  if (num % 3 === 0) {
+  } else if (num % 3 === 0) {
     str = 'Fizz';
-  }
-  if (num % 5 === 0) {
+  } else if (num % 5 === 0) {
     str = 'Buzz';
   }
-  return num ? str === '' : str;
+  return str === '' ? num : str;
 }
 
 /**
@@ -133,8 +134,12 @@ function isTriangle(a, b, c) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-function doRectanglesOverlap(/* rect1, rect2 */) {
-  throw new Error('Not implemented');
+function doRectanglesOverlap(rect1, rect2) {
+  if ((rect1[1] < rect2[2] || rect2[1] < rect1[3])
+    || (rect1[2] < rect2[0] || rect2[2] < rect1[0])) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -178,8 +183,14 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charAt(i);
+    if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
+      return char;
+    }
+  }
+  return null;
 }
 
 /**
@@ -292,16 +303,12 @@ function isCreditCardNumber(ccn) {
  * @param num
  */
 /* eslint-disable no-param-reassign */
+/* eslint array-callback-return: ["error", { allowImplicit: true }] */
 function getDigitalRoot(num) {
-  let sum = 0;
-  while (num >= 1) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
+  while (num > 9) {
+    num = (`${num}`).split('').reduce((s, d) => +s + +d);
   }
-  if (sum > 9) {
-    getDigitalRoot(num);
-  }
-  return sum;
+  return num;
 }
 /* eslint-enable no-param-reassign */
 

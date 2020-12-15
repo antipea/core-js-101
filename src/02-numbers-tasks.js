@@ -182,8 +182,16 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function roundToPowerOfTen(num, pow) {
-  return Math.round(num, pow);
+  if (pow === 0) return num;
+  let newNum = '';
+  for (let i = 0; i < pow; i++) {
+    newNum = `${newNum}0`;
+  }
+  let ceilNum = Math.ceil(num % Number(`${pow}${newNum}`));
+  ceilNum += newNum;
+  return ceilNum;
 }
 
 /**
@@ -203,6 +211,7 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function isPrime(n) {
   if (n <= 1) {
     return false;
@@ -211,7 +220,7 @@ function isPrime(n) {
     return true;
   }
   const sqrt = Math.sqrt(n);
-  for (let i = 2; i <= sqrt; i += i) {
+  for (let i = 2; i <= sqrt; i++) {
     if (n % i === 0) {
       return false;
     }

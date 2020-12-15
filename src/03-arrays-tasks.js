@@ -188,12 +188,7 @@ function getStringsLength(arr) {
  */
 /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 function insertItem(arr, item, index) {
-  for (let i = 0; i <= arr.length; i++) {
-    if (i === index) {
-      arr.push(item);
-    }
-  }
-  return arr;
+  return arr.splice(index, 0, item);
 }
 
 /**

@@ -80,7 +80,7 @@ function timeSpanToString(startDate, endDate) {
   timeSpan -= mins * (1000 * 60);
   const seconds = Math.floor(timeSpan / (1000));
   timeSpan -= seconds * (1000);
-  return `${hours}:${mins}:${seconds}`;
+  return `0${hours}:0${mins}:0${seconds}.000`;
 }
 
 /**
